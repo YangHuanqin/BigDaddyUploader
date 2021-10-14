@@ -39,7 +39,6 @@ struct LoginView: View {
                         tips = ""
                         startLoad()
                         while tips == ""{
-                            print(1)
                             if tips != ""{
                                 break
                             }
@@ -84,7 +83,6 @@ struct LoginView: View {
                     tips = ""
                     startLoad()
                     while tips == ""{
-                        print(1)
                         if tips != ""{
                             break
                         }
@@ -106,7 +104,7 @@ struct LoginView: View {
     func startLoad(){
         let url = URL(string: "http://59.77.134.5:4999/")!
         var request = URLRequest(url: url)
-        request.timeoutInterval = 7
+        request.timeoutInterval = 4
         request.httpMethod = "POST"
         let dic = [
             "id": userID,

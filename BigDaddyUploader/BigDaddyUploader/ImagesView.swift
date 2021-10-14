@@ -36,14 +36,14 @@ struct ImagesView: View {
                             .offset(x: -10, y: 0)
                             .sheet(isPresented: $open) {
                                 VStack {
-                                    Button(action: {
-                                        self.open = false
-                                    }){
-                                        Text("返回")
-                                        
-                                        Spacer()
-                                    }
-                                    .offset(x: -80, y: -80)
+//                                    Button(action: {
+//                                        self.open = false
+//                                    }){
+//                                        Text("返回")
+//
+//                                        Spacer()
+//                                    }
+//                                    .offset(x: -80, y: -80)
                                     if Int(width) != nil && Int(height) != nil{
                                         Text("现在的尺寸是\(Int(width)!)*\(Int(height)!)")
                                     }
@@ -62,6 +62,15 @@ struct ImagesView: View {
                                             .keyboardType(.numberPad)
                                     }
                                     Divider()
+                                    Button(action: {
+                                        self.open = false
+                                    }){
+                                        Text("返回")
+                                        
+                                        //Spacer()
+                                    }
+                                    
+                                   
                                     Spacer()
                                 }
                                 .padding(100)
@@ -95,6 +104,6 @@ struct ImagesView: View {
 struct ImagesView_Previews: PreviewProvider {
     static var previews: some View {
         ImagesView(data:MainData())
-.previewInterfaceOrientation(.portrait)
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
